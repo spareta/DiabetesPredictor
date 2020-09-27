@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>DiabetesPredictor API (Diabetes.csv)</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Diabetes Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	Enter preg: <input type="text" name="preg" placeholder="Enter preg: " required="required" /><br>
+        Enter plas: <input type="text" name="plas" placeholder="Enter plas: " required="required" /><br>
+	Enter pres: <input type="text" name="pres" placeholder="Enter pres: " required="required" /><br>
+    	Enter skin: <input type="text" name="skin" placeholder="Enter skin: " required="required" /><br>
+        Enter test: <input type="text" name="test" placeholder="Enter test: " required="required" /><br>
+	Enter mass: <input type="text" name="mass" placeholder="Enter mass: " required="required" /><br>
+        Enter pedi: <input type="text" name="pedi" placeholder="Enter pedi: " required="required" /><br>
+	Enter age: <input type="text" name="age" placeholder="Enter age: " required="required" /><br>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Diabetes</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
